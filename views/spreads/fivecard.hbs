@@ -1,0 +1,46 @@
+<h2>Mirror Spread</h2>
+<div class="mirror-first-row">
+  <div class="singlecard-container cardtoreveal">
+    <img src={{firstrow.img}} alt="test">
+    <div class="cardinfo hidden">
+      <p>{{firstrow.name}}</p>
+      <p>{{firstrow.category}}</p>
+      <p>{{firstrow.suit}}</p>
+      <p>{{firstrow.keywords}}</p>
+      <p>{{firstrow.description}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="mirror-second-row">
+  {{#each secondrow}}
+  <div class="singlecard-container cardtoreveal">
+    <img src={{this.img}} alt="test">
+    <div class="cardinfo hidden">
+      <p>{{this.name}}</p>
+      <p>{{this.category}}</p>
+      <p>{{this.suit}}</p>
+      <p>{{this.keywords}}</p>
+      <p>{{this.description}}</p>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<div class="mirror-third-row">
+  {{#each thirdrow}}
+  <div class="singlecard-container cardtoreveal">
+    <img src={{this.img}} alt="test">
+    <div class="cardinfo hidden">
+      <p>{{this.name}}</p>
+      <p>{{this.category}}</p>
+      <p>{{this.suit}}</p>
+      <p>{{this.keywords}}</p>
+      <p>{{this.description}}</p>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<form action="/spreads/{{savedSpread._id}}/delete"><button>Delete</button></form>
+<script src="../javascripts/fivecard.js"></script>
+

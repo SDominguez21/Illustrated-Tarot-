@@ -1,0 +1,30 @@
+<h2>Clarification Spread</h2>
+<div class="first-row">
+  <div class="singlecard-container">
+    <img src={{firstCard.img}} alt="test">
+    <div class="cardinfo hidden">
+      <p>{{firstCard.name}}</p>
+      <p>{{firstCard.category}}</p>
+      <p>{{firstCard.suit}}</p>
+      <p>{{firstCard.keywords}}</p>
+      <p>{{firstCard.description}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="second-row">
+  {{#each clarification}}
+  <div class="singlecard-container cardtoreveal">
+    <img src={{this.img}} alt="test">
+    <div class="cardinfo hidden">
+      <p>{{this.name}}</p>
+      <p>{{this.category}}</p>
+      <p>{{this.suit}}</p>
+      <p>{{this.keywords}}</p>
+      <p>{{this.description}}</p>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<form action="/spreads/{{savedSpread._id}}/delete"><button>Delete</button></form>
+<script src="../javascripts/fourcard.js"></script>

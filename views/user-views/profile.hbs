@@ -1,0 +1,21 @@
+<h1>Welcome {{currentUser.username}}!</h1>
+
+<form action="/spreads"><button>New Reading</button></form>
+
+<p>this is {{currentUser.username}}'s private page</p>
+
+<div class="past-spreads">
+  {{#each pastSpread}}
+  <div class="individual">
+    <div class="date">
+      {{this.created_at}}
+    </div>
+    <div class="type">
+      {{this.type}}
+    </div>
+    <div class="see-all">
+      <form action="/spreads/{{this._id}}"><button>See Spread</button></form>
+    </div>
+  </div>
+  {{/each}}
+</div>
