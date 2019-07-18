@@ -121,5 +121,6 @@ const tarotRoutes = require("./routes/tarotRoutes");
 app.use("/", tarotRoutes);
 const userRoutes = require("./routes/userRoutes");
 app.use("/", userRoutes);
+
 //-------------------------------------------------------------------------
 module.exports = app;

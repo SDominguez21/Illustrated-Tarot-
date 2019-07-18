@@ -36,25 +36,26 @@ a {
 }
 
 .cardtoreveal {
-  background: blue;
+  // background: blue;
+  background: url(/public/images/cardBack.png);
 }
 
 .mirror-first-row {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 .mirror-second-row {
   display: flex;
   justify-content: space-around;
-  align-items: center; 
+  align-items: center;
 }
 
 .mirror-third-row {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 // NAV
