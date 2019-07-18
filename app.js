@@ -117,6 +117,7 @@ app.use((req, res, next) => {
 });
 
 //--------------------------------ROUTES-----------------------------------
+
 const tarotRoutes = require("./routes/tarotRoutes");
 app.use("/", tarotRoutes);
 const userRoutes = require("./routes/userRoutes");

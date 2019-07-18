@@ -14,7 +14,8 @@ router.get(
   ensureLogin.ensureLoggedIn("/login"),
   (req, res, next) => {
     // Get a random entry
-    var random = Math.floor(Math.random() * 78);
+    // var random = Math.floor(Math.random() * 78); full deck
+    var random = Math.floor(Math.random() * 22);
 
     //get random card
     Card.findOne()
@@ -256,7 +257,7 @@ router.get(
   (req, res, next) => {
     // console.log(typeof req.params.id);
     Spread.findByIdAndDelete(req.params.id).then((err, deletedThing) => {
-      console.log(deletedThing, " GO TO HELL");
+      // console.log(deletedThing, " BYE");
       res.redirect("/profile");
     });
   } //end of first arrow function
