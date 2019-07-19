@@ -1,4 +1,5 @@
 <h2 class="header">Clarification Spread</h2>
+
 <div class="first-row">
   <div class="singlecard-container">
     <img src={{firstCard.img}} alt="test">
@@ -12,9 +13,10 @@
   </div>
 </div>
 
+
 <div class="second-row">
   {{#each clarification}}
-  <div class="singlecard-container cardtoreveal">
+  <div class="singlecard-container cardtoreveal makenicer">
     <img src={{this.img}} alt="test">
     <div class="cardinfo hidden">
       <p>{{this.name}}</p>
@@ -27,6 +29,7 @@
   {{/each}}
 </div>
 
+
 <div class="comment">
   {{#each savedSpread.comments}}
   <p class="text">{{this.note}}</p>
@@ -34,10 +37,11 @@
   {{/each}}
 </div>
 
+<div class="dlt-sv-nicer">
+  <form method="POST" action="/spreads/comment/{{savedSpread._id}}">
+    <textarea name="note" id="textarea-onecard" cols="30" rows="10" placeholder="Notes:"></textarea> <button
+      class="btn saveBtn">Save</button> </form>
 
-<form method="POST" action="/spreads/comment/{{savedSpread._id}}">
-  <textarea name="note" id="textarea-onecard" cols="30" rows="10" placeholder="Notes:"></textarea> <button
-    class=" saveBtn">Save</button> </form>
-
-<form action="/spreads/{{savedSpread._id}}/delete"><button>Delete</button></form>
-<script src="../javascripts/fourcard.js"></script>
+  <form action="/spreads/{{savedSpread._id}}/delete"><button class="deleteBtn btn fourcarddelete">Delete</button></form>
+  <script src="../javascripts/fourcard.js"></script>
+</div>
