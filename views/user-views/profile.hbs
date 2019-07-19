@@ -1,8 +1,4 @@
-<h1>Welcome {{currentUser.username}}!</h1>
-
-<form action="/spreads"><button>New Reading</button></form>
-
-<p>this is {{currentUser.username}}'s private page</p>
+<form action="/spreads" class='newReadingForm'><button>New Reading</button></form>
 
 <div class="past-spreads">
   {{#each pastSpread}}
@@ -14,7 +10,7 @@
       {{this.type}}
     </div>
     <div class="see-all">
-      <form action="/spreads/{{this._id}}"><button>See Spread</button></form>
+      <form action="/spreads/{{this._id}}"><button class="btn">Spread</button></form>
     </div>
   </div>
   {{/each}}

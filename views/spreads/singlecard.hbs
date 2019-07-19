@@ -1,6 +1,6 @@
-<h2>Single Card Spread</h2>
+<h2 class="header">Single Card Spread</h2>
 
-<div class="singlecard-container">
+<div class="singlecard-container oneCard">
   <img src={{theCard.img}} alt="test">
   <div class="cardinfo hidden">
     <p>{{theCard.name}}</p>
@@ -16,9 +16,11 @@
 {{this.time}}
 {{/each}}
 
-<form method="POST" action="/spreads/comment/{{savedSpread._id}}"> Note: <textarea name="note" id="textarea-onecard"
-    cols="30" rows="10"></textarea> <button>Save</button> </form>
+<form method="POST" action="/spreads/comment/{{savedSpread._id}}" class="commentForm">
+  <textarea name="note" id="textarea-onecard" cols="30" rows="10" placeholder="Notes:"></textarea> <button
+    class="btn saveBtn">Save</button> </form>
 
-<form action="/spreads/{{savedSpread._id}}/delete"><button>Delete</button></form>
+<form action="/spreads/{{savedSpread._id}}/delete" class="deleteForm"><button class="deleteBtn btn">Delete</button>
+</form>
 
 <script src="../javascripts/singlecard.js"></script>
