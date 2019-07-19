@@ -2,11 +2,28 @@ body {
   padding: 50px;
   font-family: sans-serif; }
 
-a {
-  color: #00b7ff; }
+nav a {
+  color: black;
+  text-decoration: none;
+  font-family: sans-serif; }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
 
 .home-container img {
   height: 400px; }
+
+.cardinfo {
+  height: 225px;
+  margin: 0 auto;
+  width: 174px;
+  overflow: scroll; }
+
+.cardinfo p {
+  width: 100%;
+  text-align: center; }
 
 .singlecard-container {
   width: 189px;
@@ -60,15 +77,5 @@ span {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-
-nav a {
-  color: black;
-  text-decoration: none;
-  font-family: sans-serif; }
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,16 +3,51 @@ body {
   font-family: sans-serif;
 }
 
-a {
-  color: #00b7ff;
+// a {
+//   color: #00b7ff;
+// }
+
+// NAV
+nav a {
+  color: black;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 // HOME PAGE
+// .home-container{
+//   background: 
+// }
+
 .home-container img {
   height: 400px;
 }
 
+// spread btns
+// .spread-btn{
+
+// }
+
 // CARDS
+
+.cardinfo {
+  height: 225px;
+  margin: 0 auto;
+  width: 174px;
+  overflow: scroll;
+}
+
+.cardinfo p {
+  width: 100%;
+  text-align: center;
+}
+
 .singlecard-container {
   width: 189px;
   height: 280.2px;
@@ -77,15 +112,4 @@ span {
   align-items: center;
 }
 
-// NAV
-nav a {
-  color: black;
-  text-decoration: none;
-  font-family: sans-serif;
-}
 
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
