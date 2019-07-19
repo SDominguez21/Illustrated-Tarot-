@@ -18,8 +18,8 @@ const flash = require("connect-flash");
 
 mongoose.Promise = Promise;
 mongoose
-  // .connect("mongodb://localhost/tarot", { useNewUrlParser: true })
-  .connect(process.env.MONGODB_URI, { userNewUrlParser: true })
+  .connect("mongodb://localhost/tarot", { useNewUrlParser: true })
+  // .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -41,6 +41,9 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//card images working because of this
+app.use(express.static("./public/images"));
 
 // Express View engine setup
 

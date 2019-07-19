@@ -5,10 +5,14 @@ body {
 a {
   color: #00b7ff; }
 
+.home-container img {
+  height: 400px; }
+
 .singlecard-container {
-  width: 182px;
+  width: 189px;
   height: 280.2px;
-  margin: 0 2px; }
+  margin: 0 2px;
+  cursor: pointer; }
 
 .hidden {
   display: none; }
@@ -28,7 +32,19 @@ a {
   align-items: center; }
 
 .cardtoreveal {
-  background: blue; }
+  background: url(/images/cardBack.png);
+  background-size: cover; }
+
+.cardtoreveal span {
+  color: white;
+  display: block;
+  font-size: 4rem;
+  margin: 50% 0 0;
+  text-align: center;
+  width: 100%; }
+
+span {
+  display: none; }
 
 .mirror-first-row {
   display: flex;

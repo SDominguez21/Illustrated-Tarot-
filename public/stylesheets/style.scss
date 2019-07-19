@@ -7,11 +7,17 @@ a {
   color: #00b7ff;
 }
 
+// HOME PAGE
+.home-container img {
+  height: 400px;
+}
+
 // CARDS
 .singlecard-container {
-  width: 182px;
+  width: 189px;
   height: 280.2px;
   margin: 0 2px;
+  cursor: pointer;
 }
 
 .hidden {
@@ -36,8 +42,21 @@ a {
 }
 
 .cardtoreveal {
-  // background: blue;
-  background: url(/public/images/cardBack.png);
+  background: url(/images/cardBack.png);
+  background-size: cover;
+}
+
+.cardtoreveal span {
+  color: white;
+  display: block;
+  font-size: 4rem;
+  margin: 50% 0 0;
+  text-align: center;
+  width: 100%;
+}
+
+span {
+  display: none;
 }
 
 .mirror-first-row {

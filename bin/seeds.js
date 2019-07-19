@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Card = require("../models/Card");
 
 mongoose
-  .connect(process.env.MONGODB_URI, { userNewUrlParser: true })
+  // .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .connect("mongodb://localhost/tarot", { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -50,6 +51,207 @@ mongoose
 // }
 
 const cards = [
+  {
+    name: "The Fool",
+    category: "Major Arcana",
+    suit: "0",
+    keywords:
+      "beginnings, innocence, spontaneity, a free spirit, unlimited potential",
+    description:
+      "Embrace the unknown. This is about new experiences, personal growth, development, and adventure.",
+    img: "../images/zero.jpg"
+  },
+  {
+    name: "The Magician",
+    category: "Major Arcana",
+    suit: "I",
+    keywords: "manifestation, resourcefulness, power, inspired action",
+    description:
+      "Everything you need right now is at your fingertips. You have the spiritual, physical, mental and emotional resources to manifest your desires.",
+    img: "../images/one.jpg"
+  },
+  {
+    name: "The High Priestess",
+    category: "Major Arcana",
+    suit: "II",
+    keywords:
+      "intuition, sacred knowledge, divine feminine, the subconscious mind",
+    description:
+      "She teaches you that the world is not always as it seems and more profound influences are often at play. She asks you to look deep inside. All the answers are already inside of you.",
+    img: "../images/two.jpg"
+  },
+  {
+    name: "The Empress",
+    category: "Major Arcana",
+    suit: "III",
+    keywords: "femininity, beauty, nature, nurturing, abundance",
+    description:
+      "The Empress calls on you to connect with your feminine energy. Create beauty, comfort, and pleasure.",
+    img: "../images/three.jpg"
+  },
+  {
+    name: "The Emperor",
+    category: "Major Arcana",
+    suit: "IV",
+    keywords: "authority, establishment, structure, a father figure",
+    description: "A fatherly role. Providing, defending, and protecting.",
+    img: "../images/four.jpg"
+  },
+  {
+    name: "The Hierophant",
+    category: "Major Arcana",
+    suit: "V",
+    keywords:
+      "spiritual wisdom, religious beliefs, conformity, tradition,institutions",
+    description:
+      "Having to do with study. Honing a craft or refining your knowledge.",
+    img: "../images/five.jpg"
+  },
+  {
+    name: "The Lovers",
+    category: "Major Arcana",
+    suit: "VI",
+    keywords: "love, harmony, relationships, values alignment, choices",
+    description:
+      "A card of open communication and raw honesty. Deepening a connection with yourself or with another.",
+    img: "../images/six.jpg"
+  },
+  {
+    name: "The Chariot",
+    category: "Major Arcana",
+    suit: "VII",
+    keywords: "control, willpower, success, action, determination",
+    description:
+      "A sign of encouragement. When you apply discipline, commitment and willpower to achieve your goals, you will succeed.",
+    img: "../images/seven.jpg"
+  },
+  {
+    name: "Justice",
+    category: "Major Arcana",
+    suit: "VIII",
+    keywords: "justice, fairness, truth, cause and effect, law",
+    description:
+      "If you seek justice, then the Justice card is a positive sign that it will indeed be served. If you are being called to account for your actions, you will be judged accordingly.",
+    img: "../images/eight.jpg"
+  },
+  {
+    name: "The Hermit",
+    category: "Major Arcana",
+    suit: "IX",
+    keywords: "soul-searching, introspection, being alone, inner guidance",
+    description:
+      "The Hermit invites you to retreat into your private world and experience a deep sense of seclusion and introspection.",
+    img: "../images/nine.jpg"
+  },
+  {
+    name: "The Wheel of Fortune",
+    category: "Major Arcana",
+    suit: "X",
+    keywords: "good luck, karma, life cycles, destiny, a turning point",
+    description:
+      "What goes around comes around. Have faith that the Universe will take care of your situation in the best way possible.",
+    img: "../images/ten.jpg"
+  },
+  {
+    name: "Strength",
+    category: "Major Arcana",
+    suit: "XI",
+    keywords: "strength, courage, persuasion, influence, compassion",
+    description:
+      "Speaks to the inner strength and the human spirit's ability to overcome any obstacle. You have great stamina and persistence, balanced with underlying patience and inner calm.",
+    img: "../images/eleven.jpg"
+  },
+  {
+    name: "The Hanged Man",
+    category: "Major Arcana",
+    suit: "XII",
+    keywords: "pause, surrender, letting go, new perspectives",
+    description:
+      "You may be suspended in a state that's forcing you to adress some patterns or a situations before they expire.",
+    img: "../images/twelve.jpg"
+  },
+  {
+    name: "Death",
+    category: "Major Arcana",
+    suit: "XIII",
+    keywords: "endings, change, transformation, transition",
+    description:
+      "Death card symbolises the end of a major phase or aspect of your life that you realise is no longer serving you. You must close one door to open another.",
+    img: "../images/thirteen.jpg"
+  },
+  {
+    name: "Temperance",
+    category: "Major Arcana",
+    suit: "XIV",
+    keywords: "balance, moderation, patience, purpose",
+    description:
+      "You are being invited to stabilise your energy and to allow the life force to flow through you without force or resistance.",
+    img: "../images/fourteen.jpg"
+  },
+  {
+    name: "The Devil",
+    category: "Major Arcana",
+    suit: "XV",
+    keywords:
+      "shadow self, attachment, addiction, restriction, instant gratification",
+    description:
+      "The Devil card represents your shadow (or darker) side and the negative forces that constrain you and hold you back from being the best version of yourself.",
+    img: "../images/fifteen.jpg"
+  },
+  {
+    name: "The Tower",
+    category: "Major Arcana",
+    suit: "XVI",
+    keywords: "sudden change, upheaval, chaos, revelation, awakening",
+    description:
+      "Expect the unexpected – massive change, upheaval, destruction and chaos.",
+    img: "../images/sixteen.jpg"
+  },
+  {
+    name: "The Star",
+    category: "Major Arcana",
+    suit: "XVII",
+    keywords: "hope, faith, purpose, renewal, spirituality, gratitude",
+    description:
+      "You have endured many challenges and stripped yourself bare of any limiting beliefs that have previously held you back.",
+    img: "../images/seventeen.jpg"
+  },
+  {
+    name: "The Moon",
+    category: "Major Arcana",
+    suit: "XVIII",
+    keywords: "illusion, fear, anxiety, subconscious, intuition, triggered",
+    description:
+      "The Moon represents your fears, illusions and uncertainty. Nothing is what it seems.",
+    img: "../images/eighteen.jpg"
+  },
+  {
+    name: "The Sun",
+    category: "Major Arcana",
+    suit: "XIX",
+    keywords: "positivity, fun, warmth, success, vitality",
+    description:
+      "The Sun gives you strength and tells you that no matter where you go or what you do, your positive and radiant energy will follow you and bring you happiness and joy.",
+    img: "../images/nineteen.jpg"
+  },
+  {
+    name: "Judgement",
+    category: "Major Arcana",
+    suit: "XX",
+    keywords: "judgement, rebirth, inner calling, absolution",
+    description:
+      "The Judgement card often indicates that you need to make a life-changing decision. Tune in to a higher frequency. Let go of your old self and step into this newest version of who you really are.",
+    img: "../images/twenty.jpg"
+  },
+  {
+    name: "The World",
+    category: "Major Arcana",
+    suit: "XXI",
+    keywords: "completion, integration, accomplishment, travel",
+    description:
+      "You are glowing with a sense of wholeness, achievement, fulfilment and completion. reflect on your journey, honour your achievements and tune into your spiritual lessons.",
+    img: "../images/twenty-one.jpg"
+  }
   // {
   //   name: "Ace of Wands",
   //   category: "Minor Arcana",
@@ -557,207 +759,6 @@ const cards = [
   //     "You have gained control of your feelings and can accept them without allowing them to get the better of you.",
   //   img: ""
   // },
-  {
-    name: "The Fool",
-    category: "Major Arcana",
-    suit: "0",
-    keywords:
-      "beginnings, innocence, spontaneity, a free spirit, unlimited potential",
-    description:
-      "Embrace the unknown. This is about new experiences, personal growth, development, and adventure.",
-    img: "zero.jpg"
-  },
-  {
-    name: "The Magician",
-    category: "Major Arcana",
-    suit: "I",
-    keywords: "manifestation, resourcefulness, power, inspired action",
-    description:
-      "Everything you need right now is at your fingertips. You have the spiritual, physical, mental and emotional resources to manifest your desires.",
-    img: "one.jpg"
-  },
-  {
-    name: "The High Priestess",
-    category: "Major Arcana",
-    suit: "II",
-    keywords:
-      "intuition, sacred knowledge, divine feminine, the subconscious mind",
-    description:
-      "She teaches you that the world is not always as it seems and more profound influences are often at play. She asks you to look deep inside. All the answers are already inside of you.",
-    img: "two.jpg"
-  },
-  {
-    name: "The Empress",
-    category: "Major Arcana",
-    suit: "III",
-    keywords: "femininity, beauty, nature, nurturing, abundance",
-    description:
-      "The Empress calls on you to connect with your feminine energy. Create beauty, comfort, and pleasure.",
-    img: "three.jpg"
-  },
-  {
-    name: "The Emperor",
-    category: "Major Arcana",
-    suit: "IV",
-    keywords: "authority, establishment, structure, a father figure",
-    description: "A fatherly role. Providing, defending, and protecting.",
-    img: "four.jpg"
-  },
-  {
-    name: "The Hierophant",
-    category: "Major Arcana",
-    suit: "V",
-    keywords:
-      "spiritual wisdom, religious beliefs, conformity, tradition,institutions",
-    description:
-      "Having to do with study. Honing a craft or refining your knowledge.",
-    img: "five.jpg"
-  },
-  {
-    name: "The Lovers",
-    category: "Major Arcana",
-    suit: "VI",
-    keywords: "love, harmony, relationships, values alignment, choices",
-    description:
-      "A card of open communication and raw honesty. Deepening a connection with yourself or with another.",
-    img: "six.jpg"
-  },
-  {
-    name: "The Chariot",
-    category: "Major Arcana",
-    suit: "VII",
-    keywords: "control, willpower, success, action, determination",
-    description:
-      "A sign of encouragement. When you apply discipline, commitment and willpower to achieve your goals, you will succeed.",
-    img: "seven.jpg"
-  },
-  {
-    name: "Strength",
-    category: "Major Arcana",
-    suit: "VIII",
-    keywords: "strength, courage, persuasion, influence, compassion",
-    description:
-      "Speaks to the inner strength and the human spirit's ability to overcome any obstacle. You have great stamina and persistence, balanced with underlying patience and inner calm.",
-    img: "eight.jpg"
-  },
-  {
-    name: "The Hermit",
-    category: "Major Arcana",
-    suit: "IX",
-    keywords: "soul-searching, introspection, being alone, inner guidance",
-    description:
-      "The Hermit invites you to retreat into your private world and experience a deep sense of seclusion and introspection.",
-    img: "nine.jpg"
-  },
-  {
-    name: "The Wheel of Fortune",
-    category: "Major Arcana",
-    suit: "X",
-    keywords: "good luck, karma, life cycles, destiny, a turning point",
-    description:
-      "What goes around comes around. Have faith that the Universe will take care of your situation in the best way possible.",
-    img: "ten.jpg"
-  },
-  {
-    name: "Justice",
-    category: "Major Arcana",
-    suit: "XI",
-    keywords: "justice, fairness, truth, cause and effect, law",
-    description:
-      "If you seek justice, then the Justice card is a positive sign that it will indeed be served. If you are being called to account for your actions, you will be judged accordingly.",
-    img: "eleven.jpg"
-  },
-  {
-    name: "The Hanged Man",
-    category: "Major Arcana",
-    suit: "XII",
-    keywords: "pause, surrender, letting go, new perspectives",
-    description:
-      "You may be suspended in a state that's forcing you to adress some patterns or a situations before they expire.",
-    img: "twelve.jpg"
-  },
-  {
-    name: "Death",
-    category: "Major Arcana",
-    suit: "XIII",
-    keywords: "endings, change, transformation, transition",
-    description:
-      "Death card symbolises the end of a major phase or aspect of your life that you realise is no longer serving you. You must close one door to open another.",
-    img: "thirteen.jpg"
-  },
-  {
-    name: "Temperance",
-    category: "Major Arcana",
-    suit: "XIV",
-    keywords: "balance, moderation, patience, purpose",
-    description:
-      "You are being invited to stabilise your energy and to allow the life force to flow through you without force or resistance.",
-    img: "fourteen.jpg"
-  },
-  {
-    name: "The Devil",
-    category: "Major Arcana",
-    suit: "XV",
-    keywords:
-      "shadow self, attachment, addiction, restriction, instant gratification",
-    description:
-      "The Devil card represents your shadow (or darker) side and the negative forces that constrain you and hold you back from being the best version of yourself.",
-    img: "fifteen.jpg"
-  },
-  {
-    name: "The Tower",
-    category: "Major Arcana",
-    suit: "XVI",
-    keywords: "sudden change, upheaval, chaos, revelation, awakening",
-    description:
-      "Expect the unexpected – massive change, upheaval, destruction and chaos.",
-    img: "sixteen.jpg"
-  },
-  {
-    name: "The Star",
-    category: "Major Arcana",
-    suit: "XVII",
-    keywords: "hope, faith, purpose, renewal, spirituality, gratitude",
-    description:
-      "You have endured many challenges and stripped yourself bare of any limiting beliefs that have previously held you back.",
-    img: "seventeen.jpg"
-  },
-  {
-    name: "The Moon",
-    category: "Major Arcana",
-    suit: "XVIII",
-    keywords: "illusion, fear, anxiety, subconscious, intuition, triggered",
-    description:
-      "The Moon represents your fears, illusions and uncertainty. Nothing is what it seems.",
-    img: "eighteen.jpg"
-  },
-  {
-    name: "The Sun",
-    category: "Major Arcana",
-    suit: "XIX",
-    keywords: "positivity, fun, warmth, success, vitality",
-    description:
-      "The Sun gives you strength and tells you that no matter where you go or what you do, your positive and radiant energy will follow you and bring you happiness and joy.",
-    img: "nineteen.jpg"
-  },
-  {
-    name: "Judgement",
-    category: "Major Arcana",
-    suit: "XX",
-    keywords: "judgement, rebirth, inner calling, absolution",
-    description:
-      "The Judgement card often indicates that you need to make a life-changing decision. Tune in to a higher frequency. Let go of your old self and step into this newest version of who you really are.",
-    img: "twenty.jpg"
-  },
-  {
-    name: "The World",
-    category: "Major Arcana",
-    suit: "XXI",
-    keywords: "completion, integration, accomplishment, travel",
-    description:
-      "You are glowing with a sense of wholeness, achievement, fulfilment and completion. reflect on your journey, honour your achievements and tune into your spiritual lessons.",
-    img: "twenty-one.jpg"
-  }
 ]; //end
 
 Card.create(cards);

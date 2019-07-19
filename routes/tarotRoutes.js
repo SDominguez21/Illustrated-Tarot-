@@ -5,6 +5,11 @@ const ensureLogin = require("connect-ensure-login");
 const Spread = require("../models/Spread");
 const User = require("../models/User");
 
+// home page route
+router.get("/", (req, res, next) => {
+  res.render("home");
+});
+
 //single card route
 router.get(
   //browser url
@@ -15,7 +20,7 @@ router.get(
   (req, res, next) => {
     // Get a random entry
     // var random = Math.floor(Math.random() * 78); full deck
-    var random = Math.floor(Math.random() * 22);
+    var random = Math.floor(Math.random() * 22); //major arcana deck
 
     //get random card
     Card.findOne()
