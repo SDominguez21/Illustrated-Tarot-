@@ -1,5 +1,5 @@
 html {
-  background: #fc715d;
+  background: white;
 }
 
 body {
@@ -41,7 +41,7 @@ nav {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #fc715d;
+  // background: #fc715d;
   z-index: -1;
 }
 
@@ -248,4 +248,22 @@ textarea {
 
 .usrLogin {
   text-align: center;
+}
+
+.circleBtn {
+  border-radius: 55px;
+  height: 98px;
+  width: 98px;
+  color: #3d34ab;
+  font-weight: 100;
+  font-size: 1rem;
+  background: #f2a397;
+  border: 1px solid #3d34ab;
+  box-shadow: 0px 2px 4px 2px #00000057;
+  margin: 63px;
+}
+
+.spread-btn {
+  display: flex;
+  justify-content: center;
 }

@@ -45,11 +45,16 @@
   {{/each}}
 </div>
 
+<div class="comment">
+  {{#each savedSpread.comments}}
+  <p class="text">{{this.note}}</p>
+  <p class="commentTime">{{this.time}}</p>
+  {{/each}}
+</div>
+
 <form method="POST" action="/spreads/comment/{{savedSpread._id}}">
   <textarea name="note" id="textarea-onecard" cols="30" rows="10" placeholder="Notes:"></textarea> <button
     class=" saveBtn">Save</button> </form>
-
-<form action="/spreads/{{savedSpread._id}}/delete"><button>Delete</button></form>
 
 <form action="/spreads/{{savedSpread._id}}/delete"><button>Delete</button></form>
 <script src="../javascripts/fivecard.js"></script>
