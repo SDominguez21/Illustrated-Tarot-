@@ -6,7 +6,7 @@ const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
 
 router.get("/signup", (req, res, next) => {
-  console.log("I'm inside get /signup");
+  // console.log("I'm inside get /signup");
   res.render("../views/user-views/signup");
 });
 
