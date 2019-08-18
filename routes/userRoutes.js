@@ -23,7 +23,7 @@ router.post("/signup", (req, res, next) => {
     password: hashedPassWord
   })
     .then(() => {
-      console.log("yay");
+      // console.log("yay");
       res.redirect("/login");
     })
     .catch(err => {
